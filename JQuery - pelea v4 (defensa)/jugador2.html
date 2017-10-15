@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pelea</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.css">
+	<link rel="stylesheet" href="css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="armadoDePersonajes">
+			<div class="row">
+				<div class="col-xs-12 text-center" style="padding-top: 30px; margin: 0 auto;">
+					<h2> Jugador 2</h2>
+					<br>
+					<form class="form-group" action="" id="formJugador2">
+						<label for="nombreJugador2">Nombre de Jugador</label>
+	    				<input type="text" class="form-control" id="nombreJugador2" placeholder="Escriba su nombre">
+	    				<br>
+	   					<label for="nombreHeroe2">Nombre de tu Heroe</label>
+	    				<input type="text" class="form-control" id="nombreHeroe2" placeholder="Escriba el nombre de su heroe">	
+	    				<br>
+						<label>Ingresar los atributos de tu heroe: Podes asignar 10 puntos totales en las diferentes características de tu heroe</label>
+						<input class="form-control" id="golpeHeroe2" type="number" min="1" max="9">
+   						<small id="golpeHeroe2Help" class="form-text text-muted">Asignale puntos de ataque, mínimo 1</small>
+   						<input class="form-control" id="vidaHeroe2" type="number" min="1" max="9">
+   						<small id="vidaHeroe2Help" class="form-text text-muted">Asignale puntos de ataque, mínimo 1</small>
+	    				<span id="mensajeDeError"></span>
+	    				<br>
+	   					<button type="submit" class="btn btn-primary" id="btnJugador2">Submit</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/armadoPjs.js"></script>
+	<!--<script src="js/bootstrap.js"></script>-->
+</body>
+</html>
