@@ -1,0 +1,722 @@
+/*CSS General*/
+/* Tipografias*/
+
+html{
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+h1{ 
+    font-size: 2.6rem;
+} 
+
+h2{ 
+    font-size: 2.15rem;    
+} 
+
+h3{ 
+    font-size: 1.7rem; 
+} 
+
+h4{ 
+    font-size: 1.1rem;     
+} 
+
+h5{ 
+    font-size: 1rem;     
+} 
+
+h6{
+	font-size:0.85rem;
+}
+
+p{ 
+    font-size: 1.2rem;     
+}
+
+a{
+	font-size: 1.2rem;
+}
+
+/*Texto clases útiles*/
+
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-justify {
+	text-align: justify;
+}
+.text-lowercase {
+	text-transform: lowercase;
+}
+.text-uppercase {
+	text-transform: uppercase;
+}
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+.titulo{
+	font-family: 'Pacifico', cursive;
+	text-transform: capitalize;
+	font-size: 3rem;
+	font-weight: 400;
+	color:white;
+}
+.subtitulo{
+	letter-spacing: 0.05rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color:white;
+    letter-spacing: 0.2rem;
+}
+.subtituloSpan{
+	font-style: italic;
+    font-weight: 100;
+    text-transform: initial;
+    color:white;
+}
+.contadorTexto{
+	letter-spacing: 0.1rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 1rem;
+	color:white;
+}
+
+#emojiContadorDeTareas{
+	color:white;
+	padding: 8px;
+	width: 5rem;
+}
+
+/*Fondo degrade #09b575 a #07905d*/
+#linearBg1 { /* fallback */ 
+	background-color: #09b575; 
+	/* Safari 4-5, Chrome 1-9 */ 
+	background: -webkit-gradient(linear, left top, right top, from(#07905d), to(#09b575)); 
+	/* Safari 5.1, Chrome 10+ */ 
+	background: -webkit-linear-gradient(left, #09b575, #07905d); 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(left, #09b575, #07905d); 
+	/* IE 10 */ 
+	background: -ms-linear-gradient(left, #09b575, #07905d); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(left, #09b575, #07905d); }
+
+
+/*imagenes*/
+.img-responsive{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.img-rounded {
+	border-radius: 6px;
+}
+.img-thumbnail {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+	padding: 4px;
+	line-height: 1.42857143;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	    -o-transition: all .2s ease-in-out;
+	        transition: all .2s ease-in-out;
+}
+.img-circle {
+	border-radius: 50%;
+}
+
+/* --------------------------- HEADER --------------------------- */
+
+.informacionUsuario{
+	display: grid;
+	grid-template-columns: 6fr 1fr 1fr;
+	grid-template-areas:
+	"titulo contador emoji"
+	"subtitulo contador emoji";
+	/*padding: 15px 30px 15px 30px;*/
+}
+
+.informacionUsuario .titulo{
+	grid-area: titulo;
+	margin:0em;
+	padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    /*padding-bottom: 0.25rem;*/
+	/*background-color: lightblue;*/
+	align-self: center;
+}
+
+.informacionUsuario .subtitulo{
+	grid-area: subtitulo;
+	margin:0em;
+	padding-left: 1.5rem;
+	/*padding-top: 0.25rem;*/
+	padding-bottom: 0.5rem;
+	/*background-color: lightgreen;*/
+	align-self: center;
+}
+
+.informacionUsuario .contadorDeTareas{
+	grid-area: contador;
+	margin:0em;
+	padding: 0em;
+	/*background-color: lightpink;*/
+	align-self: center;
+	justify-self: center;
+}
+
+.informacionUsuario .emojiTareas{
+	grid-area: emoji;
+	margin-right:1.5rem;
+	padding: 0em;
+	/*background-color: pink;*/
+	align-self: center;
+	justify-self: end;
+}
+
+.emojiTareas{
+	/*background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;*/
+}
+/* --------------------------- BARRA DE TAREAS --------------------------- */
+/*Botones*/
+.barraDeTareas button{
+	border:none;
+	background: none;
+	color: #17c281;
+	font-size: 1.5rem;	
+}
+
+.barraDeTareas i{
+	vertical-align: middle;
+}
+
+.agregarEliminar p{
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+.barraDeTareas button:hover{
+	color:#47cf9b;
+}
+
+.barraDeTareas{
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-areas:
+	"botones buscar filtros";
+	/*padding: 15px 30px 15px 30px;*/
+	padding-top: 0.7rem;
+	padding-bottom: 0.7rem;
+	background-color: #f6f6f6;
+}
+
+.agregarEliminar{
+	grid-area: botones;
+	/*background-color: #9b59b6;*/
+	align-self: center;
+	padding-left: 1rem;
+	justify-self: stretch;
+}
+
+.buscar {
+	grid-area: buscar;
+	/*background-color: #f39c12;*/
+	align-self: center;
+	justify-self: center;
+}
+
+#formBusqueda{
+	margin: 0px;
+	padding: 0px;
+	padding-bottom: 0.15rem;
+	border-bottom:solid #17c281 0.1rem;
+}
+
+
+#formBusqueda input{
+	border:none;
+	background: none;
+	margin: 0px;
+	padding: 0px;
+	font-weight: 100;
+	font-size: 1rem;
+	color: #6e7c77;
+}
+
+#formBusqueda input:hover{
+	color:#9daca6;
+}
+
+#formBusqueda input:focus{
+	color:#58625f;
+}
+.barraDeFiltros{
+	grid-area:filtros;
+	/*background-color: #34495e;*/
+	align-self: center;
+	margin-right:1.5rem;
+	justify-self: end;
+}
+
+.barraDeFiltros select{
+	background: none;
+	border: none;
+	font-weight: 100;
+	text-transform: capitalize;
+	font-size: 1rem;
+	color: #6e7c77;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: transparent;
+	background-image: none;
+	background-repeat: repeat;
+	background-position-x: 0%;
+	background-position-y: 0%;
+	background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(11, 202, 130)' height='40' viewBox='0 0 24 24' width='40' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+	background-repeat: no-repeat;
+	background-position-x: 100%;
+	background-position-y: -0.58rem;
+	border: none;
+	/*border-bottom: solid #0bca82 0.1rem;*/
+	border-radius: 3px;
+	/*margin-right: 0.5rem;
+	padding: 0.3rem;*/
+	padding-right: 2.5rem;
+	cursor: pointer;
+}
+
+.barraDeFiltros select option {
+    filter: hue-rotate(-43deg);
+}
+
+.iconSearch{
+	font-family: FontAwesome;
+    content: "\f095";
+}
+
+.barraDeTareasBusqueda{
+	display: grid;
+	grid-template-columns: 2fr 4fr 2fr;
+	grid-template-areas:
+	"botonAtras buscarTitulo filtros";
+	/*padding: 15px 30px 15px 30px;*/
+	color: #09b575;
+	background-color: #f6f6f6;
+}
+
+.barraDeTareasBusqueda button{
+	border:none;
+	background: none;
+	color: #17c281;
+	font-size: 1.5rem;	
+}
+
+.barraDeTareasBusqueda i{
+	vertical-align: middle;
+}
+.barraDeTareasBusqueda button:hover{
+	color:#47cf9b;
+}
+
+.buscarTitulo{
+	grid-area: buscarTitulo;
+	align-self: center;
+	justify-self:center;
+}
+
+.buscarTitulo h2{
+	padding-top:1rem;
+	padding-bottom:1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	font-size: 2rem;
+	font-weight: bold;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	line-height: 2rem;
+}
+
+.volverAtras{
+	grid-area: botonAtras;
+	align-self: center;
+	justify-self:start;
+	padding-left: 1.5rem;
+}
+
+.volverAtras i{
+	vertical-align: middle;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.volverAtras p{
+	display: inline;
+	margin-left: 0.4rem;
+}
+/* --------------------------- ELEMENTOS DE LISTA --------------------------- #09b575, #07905d */
+
+.elementoDeLista{
+	background: #09b575;
+	display: inline-block;
+	display: grid;
+	grid-template-columns: 1fr 6fr 1fr;
+	grid-template-areas:
+	"check titulo botones"
+	"check horario botones"
+	"check descripcion botones";
+	/*padding: 15px 30px 15px 30px;
+	vertical-align: center;
+	text-align: center;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	padding: 20px;
+	margin: 10px;*/
+	border-left: 15px solid #07905d;
+	margin-bottom: 10px;
+	color: white;
+}
+
+.elementoDeLista span{
+	margin-left:1.5rem; 
+	margin-top:1rem; 
+	margin-right:0rem; 
+	margin-bottom:0rem; 
+	cursor: pointer;
+}
+
+.elementoDeLista p{
+	margin: 0rem;
+	padding: 0rem;
+}
+
+.elementoDeLista h2{
+	margin: 0rem;
+	padding: 0rem;
+	margin-left:0rem; 
+	margin-top:1rem; 
+	margin-right:0rem; 
+	margin-bottom:0rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+}
+
+.elementoDeListaHecho{
+	background: #09b575;
+    border-left: 15px solid #076e47;
+    padding-top:4px;
+    padding-bottom:4px;
+}
+
+.elementoDeListaNoHecho{
+	background: #f6f6f6;
+	border-left: 15px solid #076e47;
+	color: #076e47;
+	border-bottom: 4px solid #076e47;
+    border-top: 4px solid #076e47;
+}
+
+.elementoDeListaHecho .horarioDeCreacion{
+	border-left: solid white 3px;
+}
+
+.elementoDeListaNoHecho .horarioDeCreacion{
+	border-left: solid #076e47 3px;
+}
+
+.checkElemento{
+	grid-area: check;
+}
+
+.tituloElemento{
+	grid-area: titulo;
+}
+
+.horarioDeCreacion{
+	grid-area: horario;
+	font-style: italic;
+	font-weight: 100;
+	font-size: 1.1rem;
+	line-height: 1.1rem;
+	padding-left: 0.35rem !important;
+	padding-top: 0.1rem !important;
+	padding-bottom: 0.1rem !important;
+	margin-top: 0.4rem !important;
+	margin-bottom: 0.4rem !important;
+	font-weight: bold;
+}
+
+.descripcionElemento{
+	grid-area: descripcion;
+	font-size: 1.3rem;
+	line-height: 1.5rem;
+	text-align: justify;
+	margin-top: 0.5rem !important;
+	margin-bottom: 1.5rem !important;
+}
+
+.botonesElemento{
+	grid-area: botones;
+	margin-left:0rem; 
+	margin-top:1rem; 
+	margin-bottom:0rem;
+	margin-right: 1rem;
+	justify-self: end;
+	cursor: pointer;
+}
+
+.botonesElemento i{
+	margin-right: 1.2rem;
+}
+
+/* --------------------------- MODAL BOX --------------------------- */
+
+.modalBox{
+	z-index:3;
+	display:none;
+	padding-top:100px;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.4)
+}
+
+.modalBox-content{
+	margin:auto;
+	background-color:#fff;
+	position:relative;
+	padding:0;
+	outline:0;
+	width:600px;
+	border: solid #07905d 0.4rem;
+	border-radius: 0.5rem;
+}
+
+.modalBox-content form button{
+	border:none;
+	background: none;
+	color: #17c281;
+	font-size: 1.5rem;	
+}
+
+.modalBox-content form button p{
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.modalBox-content form button i{
+	vertical-align: middle;
+}
+
+.modalBox-content form  i{
+	vertical-align: middle;
+}
+
+.modalBox-content form button:hover{
+	color:#47cf9b;
+}
+
+#closeModalAgregar, #closeModalEditar, #closeModalEliminarTodo{
+	float: right;
+	margin: 0;
+	padding-left: 0;
+	padding-bottom: 0;
+	padding-right: 0.7rem;
+	padding-top: 0.7rem;
+}
+
+.modalParaAgregar, .modalParaEditar, .modalParaEliminarTodo{
+	padding-top: 2rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-bottom: 0rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.modalParaAgregar h3, .modalParaEditar h3{
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	font-size: 2rem;
+	font-weight: bold;
+	margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+	margin-top: 0px;
+	line-height: 2rem;
+
+}
+
+.modalParaEliminarTodo h3{
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-right: 0px;
+	margin-bottom: 0.4rem;
+	margin-left: 0px;
+	margin-top: 0px;
+	line-height: 1.5rem;
+}
+
+.modalParaAgregar input, .modalParaEditar input{
+	display: block;
+	margin: 1rem auto;
+	width: 100%;
+	border: solid #17c281 0.1rem;
+	border-radius: 0.2rem;
+	background: none;
+	color:#6e7c77;
+	padding-left: 0.5rem;
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+	padding-right: 0.5rem;
+}
+
+.modalParaAgregar textarea, .modalParaEditar textarea{
+	display: block;
+	margin: 1rem auto;
+	width: 100%;
+	border: solid #17c281 0.1rem;
+	border-radius: 0.2rem;
+	background: none;
+	color:#6e7c77;
+	padding-left: 0.5rem;
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+	padding-right: 0.5rem;
+}
+
+.modalParaAgregar input:hover, .modalParaEditar input:hover{
+	border-bottom: solid #47cf9b 0.1rem;
+	color:#9daca6;
+}
+
+.modalParaAgregar textarea:hover, .modalParaEditar textarea:hover{
+	border-bottom: solid #47cf9b 0.1rem;
+	color:#9daca6;
+}
+
+.modalParaAgregar input:focus, .modalParaEditarinput:focus{
+	border-bottom: solid #17c281 0.1rem;
+	color:#58625f;
+}
+
+.modalParaAgregar textarea:focus, .modalParaEditar textarea:focus{
+	border-bottom: solid #17c281 0.1rem;
+	color:#58625f;
+}
+
+
+.contenedorElementosModalAgregar{
+	padding-top: 0.2rem;
+}
+
+#mensajeDeErrorAgregar, #mensajeDeErrorEditar{
+	text-align: left;
+	display: block;
+	margin-top: 0.4rem;
+	color: #47cf9b;
+	text-transform: uppercase;
+}
+
+#mensajeDeErrorBusqueda{
+	text-align: left;
+	margin-top: 0.4rem;
+	color: #47cf9b;
+	text-transform: uppercase;
+	margin-right: 0.4rem;
+}
+
+.botonesEnviarYCancelar{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#cancelModalAgregar, #cancelModalEditar, #cancelModalEliminarTodo{
+	padding-right: 2rem;
+}
+
+.enviarModalAgregar, .enviarModalEditar, .enviarModalEliminarTodo{
+	padding-left: 2rem;
+}
+
+.modalBox-animate-zoom {
+	animation:animatezoom 0.6s
+	}
+@keyframes animatezoom{
+	from{transform:scale(0)} 
+	to{transform:scale(1)}
+}
+
+@media (max-width:600px){
+	.modalBox-content{
+		margin:0 10px;
+		width:auto!important
+	}
+	.modalBox{
+		padding-top:30px
+	}
+}
+
+@media (max-width:768px){
+	.modalBox-content{
+		width:500px
+		}
+	.modalBoxl{
+		padding-top:50px
+	}
+}
+
+@media (min-width:993px){
+	.modalBox-content{
+		width:900px
+	}
+}
+
+/* --------------------------- CHECK BOX -------------------------*/
+
+.checkedBox { /*fa-check-square-o*/
+        display: inline-block;
+        font: normal normal normal 1em/1 FontAwesome;
+        font-size: inherit;
+        content: "\f046";
+    }
+
+.unCheckedBox{ /*fa-square-o*/
+        display: inline-block;
+        font: normal normal normal 1em/1 FontAwesome;
+        font-size: inherit;
+        content: "\f096";
+    }

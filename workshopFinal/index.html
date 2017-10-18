@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>To do list - Workshop CoderHouse</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/mainContainer.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/mediaQuery.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+		<script src="https://use.fontawesome.com/b73b0d7f02.js"></script>
+	</head>
+	<body>
+	<header id="linearBg1" class="informacionUsuario">
+		<h1 class="titulo"><!--<span class="nombreDeUsuario">Nicolás Bondancia</span>: -->To do list</h1>
+		<h4 class="subtitulo"> <!--Listado de tareas!--> <span class="subtituloSpan">Organiza lo que tenés que hacer!</span> </h4>
+		<div class="contadorDeTareas">
+			<p class="contadorTexto">
+				<span id="contadorTareasHechas"></span><span id="contadorTareasTotal"></span> <span id="tareasHechasTexto"></span>
+			</p>
+		</div>
+		<div class="emojiTareas">
+			<img class="img-responsive" id="emojiContadorDeTareas" src="img/iconos/unsure.svg" alt="">
+			<!--<i id="emojiContadorDeTareas" class="fa fa-4x fa-smile-o" aria-hidden="true"></i>-->
+		</div>
+	</header>
+	<div class="container-fluid">
+		<div class="barraDeTareas">
+			<div class="agregarEliminar">
+				<button type="button" name="agregar" id="openModalAgregar">
+					<p>Agregar</p>
+					<i class="fa fa-plus" aria-hidden="true"></i>
+				</button>
+				<button type="button" name="eliminarTodo" id="eliminarTodo">
+					<p>Eliminar</p>
+					<i class="fa fa-trash" aria-hidden="true"></i>
+				</button>
+			</div>
+			<div class="buscar">
+				<form action="" id="formBusqueda">
+					<span id="mensajeDeErrorBusqueda"></span>	
+					<input id="inputFormBusqueda" type="text" class="formularioBusqueda" placeholder="que estas buscando?">
+					<button type="submit" form="formBusqueda"><i class="fa fa-search"></i></button> 
+				</form>
+					    
+			</div>
+			<div class="barraDeFiltros">
+				<button type="button" id="ordenarAz">
+					<i class="fa fa-sort-alpha-asc"></i>
+				</button>
+				<button type="button" id="ordenar09">
+					<i class="fa fa-clock-o"></i>
+				</button>
+				<select id="selectMostrarTareas">
+ 					<option value="mostrarTodas">Todas</option>
+ 					<option value="mostrarCheck">Hechas</option>
+ 					<option value="mostrarUnCheck">No hechas</option>
+				</select>
+			</div>
+		</div>
+		<div class="listadoDeTareas" id="contenedorDeLasTareas">
+			<!--<div class="elementoDeLista">
+				<span class='control checkedBox fa-check-square-o fa-2x'></span>
+				<h2 class='tituloElemento'>Titulo de la tarea</h2>
+				<p class='descripcionElemento'>Descripcion de la tarea puede ser larga pero en dicho caso se va a 	delimitar la cantidad de caracteres a escribir tal vez mismo desde el insertar</p>
+				<div class='botonesElemento'>
+					<i class='fa fa-pencil  fa-2x'></i>
+					<i class='fa fa-minus-circle -o fa-2x'></i>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<div id="modalBoxAgregar" class="modalBox">
+	    <div class="modalBox-content  modalBox-animate-zoom" style="max-width:600px">
+	    	<form class="" id="formAgregarTarea">
+      			<button type="button" class="" id="closeModalAgregar">
+      				<i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+      			</button>
+		        <div class="modalParaAgregar">
+		        	<h3>Cargar una nueva actividad a la lista</h3>
+		          	<div class="contenedorElementosModalAgregar">
+		          		<input class="agregarElementoTitulo" type="text" placeholder="Titulo">
+		          		<textarea rows="7" class="agregarElementoDescripcion" type="text" placeholder="Descripcion de la tarea"></textarea>
+		          		<span id="mensajeDeErrorAgregar"></span>
+		          	</div>
+		        </div>
+	      		<div class="botonesEnviarYCancelar">
+	       			<button  type="button" class="" id="cancelModalAgregar">
+	       				<p>Cancelar</p>
+	       		 		<i class="fa fa-times" aria-hidden="true"></i>
+	       			</button>
+	         		<button type="submit" id="enviarModalAgregar">
+	         			<p>Aceptar</p>
+	         		 	<i class="fa fa-check" aria-hidden="true"></i>
+	         		</button>
+	      		</div>
+	     	</form>
+	    </div>
+	  </div>
+	  <div id="modalBoxEditar" class="modalBox">
+	    <div class="modalBox-content  modalBox-animate-zoom" style="max-width:600px">
+	    	<form class="" id="formEditarTarea">
+      			<button type="button" class="" id="closeModalEditar">
+      				<i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+      			</button>
+		        <div class="modalParaEditar">
+		        	<h3>Editar la tarea <span></h3>
+		          	<input class="EditarElementoTitulo" type="text" placeholder="Titulo">
+		          	<textarea rows="7" class="EditarElementoDescripcion" type="text" placeholder="Descripcion"></textarea>
+		          	<!--<label class="control" for="">
+						<input type="checkbox"/> Destacado
+					</label> -->
+					<span id="mensajeDeErrorEditar"></span>
+		        </div>
+	      		<div class="botonesEnviarYCancelar">
+	       			<button  type="button" class="" id="cancelModalEditar">
+	       				<p>Cancelar</p>
+	       		 		<i class="fa fa-times" aria-hidden="true"></i>
+	       			</button>
+	         		<button type="submit" class="enviarModalEditar">
+	         			<p>Aceptar</p>
+	         		 	<i class="fa fa-check" aria-hidden="true"></i>
+	         		</button>
+	      		</div>
+	     	</form>
+	    </div>
+	  </div>
+	  <div id="modalBoxEliminarTodo" class="modalBox">
+	    <div class="modalBox-content  modalBox-animate-zoom" style="max-width:600px">
+	    	<form class="" id="formEliminarTodo">
+      			<button type="button" class="" id="closeModalEliminarTodo">
+      				<i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+      			</button>
+		        <div class="modalParaEliminarTodo">
+		        	<h3>Estas seguro que querés eliminar Todas las tareas?</h3>
+		        </div>
+	      		<div class="botonesEnviarYCancelar">
+	       			<button  type="button" class="" id="cancelModalEliminarTodo">
+	       				<p>Cancelar</p>
+	       		 		<i class="fa fa-times" aria-hidden="true"></i>
+	       			</button>
+	         		<button type="submit" class="enviarModalEliminarTodo">
+	         			<p>Aceptar</p>
+	         		 	<i class="fa fa-check" aria-hidden="true"></i>
+	         		</button>
+	      		</div>
+	     	</form>
+	    </div>
+	  </div>
+	</div>
+	<script type=text/javascript src="js/latinize.js"> </script>
+	<script type=text/javascript src="js/funciones.js"> </script>
+	<script type=text/javascript src="js/index.js"> </script>
+	</body>
+</html>

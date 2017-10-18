@@ -1,0 +1,35 @@
+/* CSS MEDIA QUERY */
+
+/* Media Query */
+
+/*Entre 1200px y 992px*/
+@media (max-width: 1200px) {
+	html{
+		font-size: 15px;
+		line-height: 1.42857143;
+	}
+}
+
+/*Entre 992px y 768px*/
+@media (max-width: 992px) {
+	html{
+		font-size: 14px;
+		line-height: 1.42857143;
+	}
+}
+
+/*Entre 768px y 576px*/
+@media (max-width: 768px) {
+	html{
+		font-size: 13px;
+		line-height: 1.42857143;
+	}
+}
+
+/*Menos576px*/
+@media (max-width: 576px) {
+	html{
+		font-size: 12px;
+		line-height: 1.42857143;
+	}
+}
