@@ -385,22 +385,22 @@ var actualizarContadorDeTareas = function(){
 	contadorDeTareasHechas.innerText=cantidadDeTareasHechas.length+ "/"
 	var porcentajeCompletado = cantidadDeTareasHechas.length/listadoDeTareas.length
 	tareasHechasTexto.innerText = "tareas hechas"
-	console.log(porcentajeCompletado)
+	//console.log(porcentajeCompletado)
 	if (porcentajeCompletado>=0 && porcentajeCompletado<=0.2555555555555){
 		emojiContadorDeTareas.src="img/iconos/unsure.svg"
-		console.log("mayor a 0 y menor o igual que 0.33")
+		//console.log("mayor a 0 y menor o igual que 0.33")
 	} else if(porcentajeCompletado>0.2555555555555 && porcentajeCompletado<= 0.499999999999999){
 		emojiContadorDeTareas.src="img/iconos/meh.svg"
-		console.log("mayor a 0.33 y menor o igual que 0.66")
+		//console.log("mayor a 0.33 y menor o igual que 0.66")
 	} else if ( porcentajeCompletado>0.499999999999999 && porcentajeCompletado<1){
 		emojiContadorDeTareas.src="img/iconos/happy.svg"
-		console.log("mayor a 0.66 y menor a 1")
+		//console.log("mayor a 0.66 y menor a 1")
 	} else if (porcentajeCompletado==1){
 		emojiContadorDeTareas.src="img/iconos/awesome.svg"
-		console.log("1")
+		//console.log("1")
 	} else{
 		emojiContadorDeTareas.src="img/iconos/sad.svg"
-		console.log("no hay tareas")
+		//console.log("no hay tareas")
 		contadorDeTareasHechas.innerText=""
 		contadorDeTareasTotal.innerText=""
 		tareasHechasTexto.innerText = "carga una tarea!"
